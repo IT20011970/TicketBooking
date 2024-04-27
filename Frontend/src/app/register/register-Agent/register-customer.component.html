@@ -1,0 +1,188 @@
+<div>
+  <form style="padding-top: 40px;background-color: white;width: 700px" #regCustomerForm="ngForm"
+        (ngSubmit)="regCustomerForm.form.valid && addCustomer()" novalidate>
+
+    <div style="margin-top: 20px">NIC</div>
+    <input class="form-control" type="text" name="nic" placeholder="Enter NIC" [(ngModel)]="customer.nic"
+           #nic="ngModel" required appNicValidator>
+    <div *ngIf="(nic.touched || regCustomerForm.submitted) && nic.errors?.required"
+         class="validErr">
+      NIC is required
+    </div>
+    <div *ngIf="(nic.dirty) && nic.errors?.nicInvalid"
+         class="validErr">
+      Invalid NIC
+    </div>
+
+    <div style="margin-top: 20px">Name</div>
+    <input class="form-control" type="text" name="custName" placeholder="Enter Name" [(ngModel)]="customer.name"
+           #custName="ngModel" required>
+    <div *ngIf="(custName.touched || regCustomerForm.submitted) && custName.errors?.required"
+         class="validErr">
+      Name is required
+    </div>
+
+    <div style="margin-top: 20px">Address</div>
+    <input class="form-control" type="text" name="address" placeholder="Enter Address" [(ngModel)]="customer.address"
+           #address="ngModel" required>
+    <div *ngIf="(address.touched || regCustomerForm.submitted) && address.errors?.required"
+         class="validErr">
+      Address is required
+    </div>
+
+<!--    <div style="margin-top: 20px">Place</div>-->
+<!--    <select class="form-control" [(ngModel)]="customer.fuelStationPlace.id" name="fuelStationPlace"-->
+<!--            #fuelStationPlace="ngModel" required style="margin-bottom: 0px">-->
+<!--      <option value="">Select</option>-->
+<!--      <option *ngFor="let place of districtPlaces" [value]="place.id">{{place.place}}</option>-->
+<!--    </select>-->
+<!--    <div *ngIf="(fuelStationPlace.touched || regCustomerForm.submitted) && fuelStationPlace.errors?.required"-->
+<!--         class="validErr">-->
+<!--      Place is required-->
+<!--    </div>-->
+
+    <div style="margin-top: 20px">Contact Number</div>
+    <input class="form-control" type="text" name="contact" placeholder="Enter Contact Number"
+           [(ngModel)]="customer.contactNumber"
+           #contact="ngModel" required appTelephoneValidator>
+    <div *ngIf="(contact.touched || regCustomerForm.submitted) && contact.errors?.required"
+         class="validErr">
+      Contact Number is required
+    </div>
+    <div *ngIf="(contact.dirty) && contact.errors?.telephoneInvalid"
+         class="validErr">
+      Invalid Contact Number
+    </div>
+
+<!--    <div style="margin-top: 20px">Email</div>-->
+<!--    <input class="form-control" type="text" name="email" placeholder="Enter Email" [(ngModel)]="customer.appUser.email"-->
+<!--           #email="ngModel" required appEmailValidator>-->
+<!--    <div *ngIf="(email.touched || regCustomerForm.submitted) && email.errors?.required"-->
+<!--         class="validErr">-->
+<!--      Email is required-->
+<!--    </div>-->
+<!--    <div *ngIf="(email.dirty) && email.errors?.emailInvalid"-->
+<!--         class="validErr">-->
+<!--      Invalid Email-->
+<!--    </div>-->
+
+<!--    <div style="margin-top: 20px">OTP</div>-->
+<!--    <div style="display: flex;border-top: 0px solid #eeeeee;padding-top: 10px;padding-bottom: 10px">-->
+<!--      <div style="width: 200px">-->
+<!--        <button class="btn btn-warning" style="height: 40px" (click)="sendOTP()" type="button"-->
+<!--                [disabled]="!(customer.appUser.email!=='' && customer.appUser.contactNumber!=='')">Send OTP-->
+<!--        </button>-->
+<!--      </div>-->
+<!--      <div style="width: 100%;margin-bottom: 20px">-->
+<!--        <input class="form-control" type="number" placeholder="Enter OTP" name="otp" [(ngModel)]="otpEntered"-->
+<!--               style="margin-bottom: 0px" #otpVal="ngModel">-->
+<!--        &lt;!&ndash;<div *ngIf="otpReceived">&ndash;&gt;-->
+<!--        <div *ngIf="otp!=otpEntered && otpVal.dirty"-->
+<!--             class="validErr">-->
+<!--          Invalid OTP-->
+<!--        </div>-->
+<!--        <div *ngIf="otp==otpEntered && otpVal.dirty"-->
+<!--             class="validErr" style="color: green">-->
+<!--          OTP is verified-->
+<!--        </div>-->
+<!--        &lt;!&ndash;</div>&ndash;&gt;-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <span>Vehicle Number</span>-->
+<!--    <input class="form-control" type="text" name="vehicleNumber" placeholder="Vehicle Number"-->
+<!--           [(ngModel)]="customer.vehicle.vehicleNumber" [readonly]="!(otpReceived&&otp==otpEntered)"-->
+<!--           #vehicleNumber="ngModel" required appVehicleNumberValidator>-->
+<!--    <div *ngIf="(vehicleNumber.touched || regCustomerForm.submitted) && vehicleNumber.errors?.required"-->
+<!--         class="validErr">-->
+<!--      Vehicle Number is required-->
+<!--    </div>-->
+<!--    <div *ngIf="(vehicleNumber.dirty) && vehicleNumber.errors?.vehicleNumberInvalid"-->
+<!--         class="validErr">-->
+<!--      Invalid Vehicle Number-->
+<!--    </div>-->
+
+<!--    <div style="margin-top: 20px">Chassis Number</div>-->
+<!--    <input class="form-control" type="text" name="chassisNumber" placeholder="Chassis Number"-->
+<!--           [(ngModel)]="customer.vehicle.chassisNumber" [readonly]="!(otpReceived&&otp==otpEntered)"-->
+<!--           #chassisNumber="ngModel" required>-->
+<!--    <div *ngIf="(chassisNumber.touched || regCustomerForm.submitted) && chassisNumber.errors?.required"-->
+<!--         class="validErr">-->
+<!--      Chassis Number is required-->
+<!--    </div>-->
+
+<!--    <div style="margin-top: 20px">Vehicle Type</div>-->
+<!--    <select class="form-control" [(ngModel)]="customer.vehicle.vehicleType.id" name="vehicle"-->
+<!--            #vehicleType="ngModel" required [disabled]="!(otpReceived&&otp==otpEntered)">-->
+<!--      <option value="">Select</option>-->
+<!--      <option *ngFor="let vehicleTypeObj of vehicleTypes" [value]="vehicleTypeObj.id">{{vehicleTypeObj.name}}</option>-->
+<!--    </select>-->
+<!--    <div *ngIf="(vehicleType.touched || regCustomerForm.submitted) && vehicleType.errors?.required"-->
+<!--         class="validErr">-->
+<!--      Vehicle Type is required-->
+<!--    </div>-->
+
+<!--    <div style="margin-bottom: 10px;margin-top: 20px">-->
+<!--      <span style="font-weight: bold;">Fuel Type</span>-->
+<!--    </div>-->
+
+<!--    <div style="display: flex;justify-content: center">-->
+<!--      <div-->
+<!--        style="width: 350px;text-align: center;border: 1px solid #f18f03;padding: 10px;margin-right: 5px;font-weight: bold"-->
+<!--        [ngStyle]="{-->
+<!--        'color':customer.vehicle.fuelType==='Petrol'?'white':'black',-->
+<!--        'background-color':customer.vehicle.fuelType==='Petrol'?'#f18f03':'white'-->
+<!--        }" (click)="customer.vehicle.fuelType='Petrol'">Petrol-->
+<!--      </div>-->
+<!--      <div-->
+<!--        style="width: 350px;text-align: center;border: 1px solid #f18f03;padding: 10px;margin-left: 5px;font-weight: bold"-->
+<!--        [ngStyle]="{-->
+<!--        'color':customer.vehicle.fuelType==='Diesel'?'white':'black',-->
+<!--        'background-color':customer.vehicle.fuelType==='Diesel'?'#f18f03':'white'-->
+<!--        }" (click)="customer.vehicle.fuelType='Diesel'">-->
+<!--        Diesel-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div *ngIf="customer.vehicle.fuelType==='' && regCustomerForm.submitted"-->
+<!--         class="validErr">-->
+<!--      Fuel Type is required-->
+<!--    </div>-->
+
+    <div style="margin-top: 20px">Password</div>
+    <input class="form-control" type="password" name="password" placeholder="Enter Password"
+           [(ngModel)]="customer.password"
+           #password="ngModel" required >
+    <div *ngIf="(password.touched || regCustomerForm.submitted) && password.errors?.required"
+         class="validErr">
+      Password is required
+    </div>
+
+    <div class="container-login100-form-btn"
+         style="margin-top: 40px;margin-bottom: 40px;display: flex;flex-wrap: nowrap">
+      <button class="login100-form-btn" type="button" [routerLink]="'/login'" style="margin-right: 10px">
+        Back to login
+      </button>
+      <button class="login100-form-btn" type="submit" style="margin-left: 10px">
+        Register
+      </button>
+    </div>
+
+
+    <!--<div class="text-center p-t-46 p-b-20">-->
+    <!--<span class="txt2">-->
+    <!--or sign up using-->
+    <!--</span>-->
+    <!--</div>-->
+
+    <!--<div class="login100-form-social flex-c-m">-->
+    <!--<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">-->
+    <!--<i class="fa fa-facebook-f" aria-hidden="true"></i>-->
+    <!--</a>-->
+
+    <!--<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">-->
+    <!--<i class="fa fa-twitter" aria-hidden="true"></i>-->
+    <!--</a>-->
+    <!--</div>-->
+  </form>
+
+</div>

@@ -1,0 +1,41 @@
+<!--<div class="limiter">-->
+<!--<div class="container-login100">-->
+<div class="wrap-login100" style="display: flex;justify-content: center">
+  <span class="login100-form-title p-b-43" style="margin-top: 40px">
+    Register to continue
+  </span>
+
+
+  <!--<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">-->
+  <!--<span class="focus-input100"></span>-->
+  <!--<span class="label-input100">NIC</span>-->
+  <!--</div>-->
+  <div>
+    <div style="display: flex;justify-content: center">
+      <div
+        style="width: 220px;text-align: center;border: 1px solid #f18f03;padding: 10px;margin-right: 5px;font-weight: bold"
+        [ngStyle]="{
+        'color':registration==='customer'?'white':'black',
+        'background-color':registration==='customer'?'#f18f03':'white'
+        }"
+        (click)="registration='customer'">
+        Agent
+      </div>
+      <div
+        style="width: 220px;text-align: center;border: 1px solid #f18f03;padding: 10px;margin-left: 5px;font-weight: bold"
+        [ngStyle]="{
+        'color':registration==='fuel'?'white':'black',
+        'background-color':registration==='fuel'?'#f18f03':'white'}"
+        (click)="registration='fuel'">
+        Officer
+      </div>
+    </div>
+
+    <app-register-customer *ngIf="registration==='customer'"></app-register-customer>
+    <app-register-station *ngIf="registration==='fuel'"></app-register-station>
+  </div>
+  <!--<div class="login100-more" style="background-image: url('images/bg-01.jpg');">-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+</div>

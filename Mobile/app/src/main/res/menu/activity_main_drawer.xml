@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_fragment_bookings"
+            android:icon="@drawable/baseline_navigate_next_black_36"
+            android:fontFamily="@font/quicksand_bold"
+            android:title="@string/view_bookings" />
+        <item
+            android:id="@+id/nav_fragment_seat_booking"
+            android:icon="@drawable/baseline_navigate_next_black_36"
+            android:fontFamily="@font/quicksand_bold"
+            android:title="@string/book_seat" />
+        <item
+            android:id="@+id/nav_fragment_bookings_history"
+            android:icon="@drawable/baseline_navigate_next_black_36"
+            android:fontFamily="@font/quicksand_bold"
+            android:title="@string/view_history" />
+        <item
+            android:id="@+id/nav_fragment_view_profile"
+            android:icon="@drawable/baseline_navigate_next_black_36"
+            android:fontFamily="@font/quicksand_bold"
+            android:title="@string/view_profile" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/baseline_navigate_next_black_36"
+            android:fontFamily="@font/quicksand_bold"
+            android:title="@string/logout" />
+    </group>
+</menu>

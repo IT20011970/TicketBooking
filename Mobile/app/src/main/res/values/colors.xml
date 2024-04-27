@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#3483C1</color>
+    <color name="colorPrimaryDark">#1E421F</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="medi_green">#B9CD5B</color>
+    <color name="medi_green_text">#465505</color>
+    <color name="medi_header_text">#0B914C</color>
+
+    <color name="medi_blue">#176AAC</color>
+    <color name="medi_blue_dark">#0B4F85</color>
+
+    <color name="medi_medication_delete">#F82B1C</color>
+    <color name="medi_medication_delete_text">#FDBBB6</color>
+    <color name="medi_medication_next">#4CAF50</color>
+
+    <color name="medi_medication">#8AA9C3</color>
+    <color name="medi_medication_text">#083355</color>
+    <color name="medi_medication_not_clicked">#C8CFD5</color>
+
+    <color name="medi_medication_add_by">#FDC601</color>
+    <color name="medi_medication_add_by_not_clicked">#FAEAB3</color>
+    <color name="medi_medication_add_by_text">#5E3902</color>
+    <color name="medi_login">#DEE5EF</color>
+
+    <color name="btn_cancel">#F4B1AC</color>
+    <color name="btn_cancel_text">#DF180A</color>
+    <color name="btn_reserved">#F8DE91</color>
+    <color name="btn_reserved_text">#B88B02</color>
+    <color name="btn_reserve">#ACF1AF</color>
+    <color name="btn_reserve_text">#509853</color>
+</resources>

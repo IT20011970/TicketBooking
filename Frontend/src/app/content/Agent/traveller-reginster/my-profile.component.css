@@ -1,0 +1,17 @@
+button {
+  padding-top: 2px;
+  padding-bottom: 2px
+}
+
+td:nth-child(1) {
+  font-weight: bold;
+  /*border-right: 1px solid #7c7c7c;*/
+}
+
+tr:not(tr:last-child) {
+  border-bottom: 1px solid #c0c0c0;
+}
+
+td {
+  padding: 5px 15px 5px 15px;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_bookings"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/lyt_seat_booking_reserved_seat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <Button
+                android:id="@+id/btn_bookings_reserved_count"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/button_crud"
+                android:backgroundTint="@color/btn_reserved"
+                android:editable="false"
+                android:fontFamily="@font/quicksand_bold"
+                android:text="No Reserved Seats"
+                android:textColor="@color/btn_reserved_text"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_bookings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"/>
+
+        <!-- Add more views or content after the RecyclerView if needed -->
+    </LinearLayout>
+</ScrollView>

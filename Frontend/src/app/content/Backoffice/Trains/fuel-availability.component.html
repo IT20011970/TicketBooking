@@ -1,0 +1,115 @@
+<div style="display: flex;justify-content: center">
+  <div>
+    <form action="" #trainForm="ngForm"
+          (ngSubmit)="trainForm.form.valid" novalidate>
+      <div style="margin-top: 20px" >
+        <span style="font-weight: bold;color: #b68003;font-size: 21px" class="row"><span class="col-1" *ngIf="isUpdate==false">Add</span> <span class="col-1" *ngIf="isUpdate==true">Update</span> <div class="col-1">Trains</div></span>
+      </div>
+      <div class="row" style="margin-top: 20px;margin-left: 0px;margin-right: 0px">
+
+        <div class="col-12" style="padding: 20px;border-top: 1px solid #aeaeae;display: flex;justify-content: center">
+          <div style="margin-right: 20px;width: 100%">
+            <span>Name</span>
+            <input type="text" placeholder="Enter Train Name" class="form-control" name="number"
+                   [(ngModel)]="train.number"
+                   #name="ngModel" required>
+            <div *ngIf="(name.touched || trainForm.submitted) && name.errors?.required"
+                 class="validErr">
+              Train name is required
+            </div>
+          </div>
+          <div style="margin-right: 20px;width: 100%">
+            <span>Depature Station</span>
+            <input type="text" placeholder="Enter Depature Station" class="form-control" name="depatre_Station"
+                   [(ngModel)]="train.depatre_Station"
+                   #depatre_Station="ngModel" required>
+            <div *ngIf="(depatre_Station.touched || trainForm.submitted) && depatre_Station.errors?.required"
+                 class="validErr">
+              Depature station is required
+            </div>
+          </div>
+          <div style="margin-right: 20px;width: 100%">
+            <span>Arrival Station</span>
+            <input type="text" placeholder="Enter Arrival Station" class="form-control" name="arrival_Station"
+                   [(ngModel)]="train.arrival_Station"
+                   #arrival_Station="ngModel" required>
+            <div *ngIf="(arrival_Station.touched || trainForm.submitted) && arrival_Station.errors?.required"
+                 class="validErr">
+              Arrival station is required
+            </div>
+          </div>
+          <div style="margin-right: 20px;width: 100%">
+            <span>Departure Time</span>
+            <input type="datetime-local" class="form-control" name="depatre_Time"
+                   [(ngModel)]="train.depatre_Time"
+                   #depatre_Time="ngModel" required>
+            <div *ngIf="(depatre_Time.touched || trainForm.submitted) && depatre_Time.errors?.required"
+                 class="validErr">
+              Departure time is required
+            </div>
+            <div *ngIf="train.depatre_Time && train.arrival_Time && train.depatre_Time > train.arrival_Time"
+                 class="validErr">
+              Departure Time cannot be greater than Arrival Time
+            </div>
+          </div>
+          <div style="margin-right: 20px;width: 100%">
+            <span>Arrival Time</span>
+            <input type="datetime-local" class="form-control" name="arrival_Time"
+                   [(ngModel)]="train.arrival_Time"
+                   #arrival_Time="ngModel" required>
+            <div *ngIf="(arrival_Time.touched || trainForm.submitted) && arrival_Time.errors?.required"
+                 class="validErr">
+              Arrival time is required
+            </div>
+          </div>
+          <div style="width: 100%">
+            <button (click)="addTrains()" class="btn btn-success" type="submit" *ngIf="isUpdate==false" style="margin-top: 22px;text-align: center">Add Train
+            </button>
+            <button (click)="updateTrains()" class="btn btn-success" type="submit" *ngIf="isUpdate==true" style="margin-top: 22px;text-align: center">Update Train
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<div style="border-top: 1px solid #aeaeae;margin: 10px">
+  <div *ngFor="let trains of trains">
+    <div class="row">
+      <div class="col-4" style="margin-top: 40px;font-weight: bold">Name:{{trains.number}}</div>
+      <div class="col-4" style="margin-top: 40px;font-weight: bold">
+        <button class="btn btn-outline-info btn-lg " (click)="update(trains)" style="margin-left: 15px; border-radius: 100px; width: 50px; height: 50px" data-bs-toggle="modal">
+        <i class="fa-solid fa-pencil nav_icon"></i>
+      </button></div>
+      <div class="col-4" style="margin-top: 40px;font-weight: bold"><button class="btn btn-outline-info btn-lg " style="margin-left: 15px; border-radius: 100px; width: 50px; height: 50px" data-bs-target="#delete" (click)="deleteTrains(trains)" data-bs-toggle="modal">
+        <i class="fa-solid fa-trash nav_icon"></i>
+      </button></div>
+    </div>
+    <table class="table" width="100%" style="margin-top: 20px;border:2px solid #D19702">
+      <tbody>
+      <tr>
+        <td>Depatre Station</td>
+        <td>{{trains.depatre_Station}}</td>
+      </tr>
+      <tr>
+        <td>Arrival Station</td>
+        <td>{{trains.arrival_Station}}</td>
+      </tr>
+      <tr>
+        <td>Depatre Time</td>
+        <td>{{trains.depatre_Time}}</td>
+      </tr>
+      <tr>
+        <td>Arrival Time</td>
+        <td>{{trains.arrival_Time}}</td>
+      </tr>
+      <tr>
+        <td>Status</td>
+        <td>{{trains.status}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

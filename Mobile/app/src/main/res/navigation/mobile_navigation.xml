@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_fragment_bookings">
+
+    <fragment
+        android:id="@+id/nav_fragment_bookings"
+        android:name="com.example.ead_assignment.ui.BookingsFragment"
+        android:label="@string/view_bookings"
+        tools:layout="@layout/recycler_bookings" />
+
+    <fragment
+        android:id="@+id/nav_fragment_seat_booking"
+        android:name="com.example.ead_assignment.ui.SeatBookingFragment"
+        android:label="@string/book_seat"
+        tools:layout="@layout/fragment_seat_booking" />
+
+    <fragment
+        android:id="@+id/nav_fragment_bookings_history"
+        android:name="com.example.ead_assignment.ui.BookingsHistoryFragment"
+        android:label="@string/view_history"
+        tools:layout="@layout/fragment_bookings_history" />
+
+    <fragment
+        android:id="@+id/nav_fragment_view_profile"
+        android:name="com.example.ead_assignment.ui.ManageProfileFragment"
+        android:label="@string/view_profile"
+        tools:layout="@layout/fragment_manage_profile" />
+
+    <fragment
+        android:id="@+id/nav_fragment_seat_booking_summary"
+        android:name="com.example.ead_assignment.ui.SeatBookingSummaryFragment"
+        tools:layout="@layout/fragment_seat_booking_summary" />
+
+    <fragment
+        android:id="@+id/nav_fragment_bookings_cancel_summary"
+        android:name="com.example.ead_assignment.ui.BookingsCancelSummaryFragment"
+        tools:layout="@layout/fragment_bookings_cancel_summary" />
+
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.example.ead_assignment.LogoutActivity" />
+
+    <activity
+        android:id="@+id/nav_login"
+        android:name="com.example.ead_assignment.LoginActivity" />
+
+</navigation>

@@ -1,0 +1,93 @@
+.alertB {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  top: 0px;
+  left: 0px;
+}
+
+.alertB > div:nth-child(1) {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.44);
+}
+
+.alertB > div:nth-child(2) {
+  width: 600px;
+  /*min-height: 100px;*/
+  background-color: white;
+  margin: 100px auto auto auto;
+  position: relative;
+  padding: 10px;
+  border: 7px solid #ebebeb;
+}
+
+.alertB > div:nth-child(2) > div:nth-child(1) {
+  text-align: right;
+  color: #787878;
+}
+
+.alertB > div:nth-child(2) > div:nth-child(2) {
+  font-weight: bold;
+  color: #3f3f3f;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.alertB > div:nth-child(2) > div:nth-child(3) {
+  bottom: 10px;
+  right: 10px;
+  margin-top: 25px;
+  text-align: right;
+}
+
+.btn {
+  padding: 2px 20px 2px 20px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.btn-primary {
+  background-color: #007aa9;
+  border-color: #007aa9;
+  margin-right: 10px;
+}
+
+.btn-outline-info {
+
+}
+
+@media screen and (max-width: 1000px) {
+  .alertB > div:nth-child(2) {
+    width: 500px !important;
+    /*height: 150px !important;*/
+  }
+
+  .alertB > div:nth-child(2) > div:nth-child(2), .alertB > div > div:nth-child(3), .btn {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 796px) {
+  .alertB > div:nth-child(2) {
+    width: 400px !important;
+    /*height: 150px !important;*/
+  }
+
+  .alertB > div:nth-child(2) > div:nth-child(2), .alertB > div > div:nth-child(3), .btn {
+    font-size: 15px !important;
+  }
+}
+
+@media screen and (max-width: 636px) {
+  .alertB > div:nth-child(2) {
+    width: 300px !important;
+    /*height: 150px !important;*/
+  }
+
+  .alertB > div:nth-child(2) > div:nth-child(2), .alertB > div > div:nth-child(3), .btn {
+    font-size: 14px !important;
+  }
+}

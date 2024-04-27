@@ -1,0 +1,106 @@
+<div class="row" style="margin-top: 75px;margin-left: 0px;margin-right: 0px">
+  <div class="row" style="margin: 80px 0px 0px 0px" xmlns="http://www.w3.org/1999/html">
+    <div class="col-md-12 col-sm-12">
+      <span style="font-weight: bold;color: #b68003;font-size: 21px">Approved Traveller</span>
+      <table class="table" width="100%" style="margin-top: 20px" border="1px solid black">
+        <thead class="thead-dark">
+        <th>#</th>
+        <th>Traveller</th>
+        <th>Location</th>
+        <th>Contact</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let d1 of userprofile let i = index">
+          <th scope="row">{{i+1}}</th>
+          <th>{{d1.nic}}-{{d1.name}}</th>
+          <td>{{d1.address}}</td>
+          <td>{{d1.contactNumber}}</td>
+          <td>{{d1.status}}</td>
+
+          <td><button class="btn btn-outline-info btn-lg " style="margin-left: 15px; border-radius: 100px; width: 50px; height: 50px"
+                      (click)="getDataEdit(d1)" data-bs-toggle="modal">
+            <i class="fa-solid fa-pencil nav_icon"></i>
+          </button></td>
+          <td><button class="btn btn-outline-info btn-lg " style="margin-left: 15px; border-radius: 100px; width: 50px; height: 50px"
+                      data-bs-target="#delete" (click)="getDataorder2(d1)" data-bs-toggle="modal">
+            <i class="fa-solid fa-trash nav_icon"></i>
+          </button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="modal fade " style="width: 1500px" id="search_fuel_report" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="pagetitle">
+              <span style="font-size: 25px;font-weight: bold;color: #750202" *ngIf="diactivatebtn==1">Diactivate User</span>
+              <span style="font-size: 25px;font-weight: bold;color: #750202" *ngIf="activatebtn==1">Activate User</span>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-body">
+                <section class="section">
+                  <form style="padding-top: 20px;background-color: white;" #ManageForm="ngForm" (ngSubmit)="ManageForm.form.valid " novalidate>
+                    <div class="container-login100-form-btn" style="margin-top: 40px;margin-bottom: 40px">
+                      <button class="login100-form-btn" type="submit" (click)="diactivate() " data-bs-dismiss="modal" *ngIf="diactivatebtn===1">
+                        Diactivate
+                      </button>
+                      <button class="login100-form-btn" type="submit" (click)="activate()"data-bs-dismiss="modal"  *ngIf="activatebtn===1">
+                        Activate
+                      </button>
+                    </div>
+                  </form>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade " style="width: 1500px" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="pagetitle">
+              <span style="font-size: 25px;font-weight: bold;color: #750202">Warning</span>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="card">
+              <div class="card-body">
+                <section class="section">
+                  <form style="padding-top: 20px;background-color: white;" #ManageForm="ngForm" (ngSubmit)="ManageForm.form.valid " novalidate>
+                    <div align="center" style="color: #b21f2d"><h2>Are you sure you want to delete</h2></div>
+                    <div class="container-login100-form-btn row" style="margin-top: 40px;margin-bottom: 40px">
+                      <div class="col-6">
+                        <button class="login100-form-btn" type="submit" (click)="delete()" data-bs-dismiss="modal">
+                          Yes
+                        </button>
+                      </div>
+                      <div class="col-6">
+                        <button class="login100-form-btn" type="submit"data-bs-dismiss="modal" >
+                          No
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

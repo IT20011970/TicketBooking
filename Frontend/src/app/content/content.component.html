@@ -1,0 +1,29 @@
+<div [ngStyle]="{'margin-left': getUser()?'70px':'0px'}">
+  <notifier-container></notifier-container>
+  <router-outlet></router-outlet>
+  <!--<app-fuel-availability></app-fuel-availability>-->
+  <!--<app-attendance-fuel-table></app-attendance-fuel-table>-->
+  <!--<app-stock-in-admin></app-stock-in-admin>-->
+  <!--<app-stock-out-admin></app-stock-out-admin>-->
+  <!--<app-fuel-availability-admin></app-fuel-availability-admin>-->
+</div>
+
+<div class="modalTable" *ngIf="isModalTableDetails.openTable">
+  <div (click)="isTrueOrFalseDetails(false)"></div>
+  <div>
+    <div class="selectChild" id="imageActivitySize"
+         style="max-height: calc(100vh - 60px);overflow-y: hidden;margin-left: 10px;margin-right: 10px;margin-top: 300px;">
+      <div style="position: absolute;z-index: 99;right: 10px;top: 10px;">
+        <i class="fas fa-times" style="cursor: pointer" (click)="isTrueOrFalseDetails(false)"></i>
+      </div>
+
+      <div>
+        <div style="position: relative;display: flex;justify-content: center;">
+
+          <div style="color: green;font-weight: bold;width: 1200px;font-size: 40px;text-align: center">{{reply.msg}}</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

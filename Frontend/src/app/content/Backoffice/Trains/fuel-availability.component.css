@@ -1,0 +1,11 @@
+tr {
+  border-color: #c0c0c0
+}
+
+span {
+  font-weight: bold;
+}
+
+td:nth-child(1) {
+  font-weight: bold;
+}

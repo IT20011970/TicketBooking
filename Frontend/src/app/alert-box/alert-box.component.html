@@ -1,0 +1,15 @@
+<div class="alertB">
+  <div (click)="isTrueOrFalse(false)"></div>
+  <div>
+    <div><i class="fas fa-times" style="cursor: pointer" (click)="isTrueOrFalse(false)"></i></div>
+    <div>
+      <div style="font-size: 18px">{{alertMsg.msg}}</div>
+      <br>
+      <div [innerHTML]="alertMsg.value"></div>
+    </div>
+    <div>
+      <button class="btn btn-primary" (click)="isTrueOrFalse(true)">Yes</button>
+      <button class="btn btn-outline-info" (click)="isTrueOrFalse(false)">No</button>
+    </div>
+  </div>
+</div>

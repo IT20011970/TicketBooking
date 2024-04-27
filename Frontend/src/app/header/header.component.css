@@ -1,0 +1,18 @@
+@media screen and (max-width: 768px) {
+
+  #fuel_head{
+    font-size: 25px !important;
+    margin-left: 30px !important;
+    margin-top: 4px !important;
+  }
+
+  #header-toggle{
+    padding-top: 11px !important;
+  }
+}
+
+/*@media screen and (min-width: 768px) {*/
+  /*#fuel_head{*/
+    /*display: block;*/
+  /*}*/
+/*}*/
